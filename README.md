@@ -10,11 +10,14 @@ For example:
 Update `.ruby-version` file to `3.0.3`
 
 # Build
-docker build -t rbenv:test .
+`docker build -t rbenv:test .`
 
 # Run
-1. docker run -it rbenv:test bash -l -c 'source ~/.bashrc && cd /root/app && bin/rails db:migrate'
+1. `docker run -d -p 3000:80 rbenv:test`
 
-2. docker exec -it {your_container_name} bash -l -c 'source ~/.bashrc && cd /root/app && rails db:migrate' 
+2. `docker exec -it {your_container_name} bash -l -c 'source ~/.bashrc && cd /root/app && rails db:migrate'`
 
 3. Visit http://localhost:3000/
+
+
+Reference
