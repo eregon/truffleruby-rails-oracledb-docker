@@ -2,7 +2,7 @@
 
 
 
-## Clone app
+# Clone app
 `git clone https://myapp-repo/ app`
 
 For example:
@@ -20,5 +20,8 @@ Update `.ruby-version` file to `3.0.3`
 3. Visit http://localhost:3000/
 
 
-Reference
+# Build with OCI Client
+`docker build -f Dockerfile.oci8 -t rbenv:oci8 .`
+
+# Reference
 https://github.com/oracle/docker-images/blob/4b5e47f9f165e309572e1ebb1191d3c92d207dec/OracleLinuxDevelopers/oraclelinux8/nginx/1.20/Dockerfile
