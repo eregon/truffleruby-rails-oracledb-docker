@@ -40,11 +40,17 @@ COPY app/ .
 
 # RUN gem install bundler
 RUN dnf install -y sqlite-devel
+
 RUN dnf install -y oracle-release-el8
 RUN dnf install -y oracle-instantclient19.10-basic oracle-instantclient19.10-devel oracle-instantclient19.10-sqlplus
 RUN echo 'export LD_LIBRARY_PATH=/usr/lib/oracle/19.10/client64/lib/:$LD_LIBRARY_PATH' >> ~/.bashrc
 
+RUN source ~/.bashrc && bundle config set force_ruby_platform true
+RUN dnf install -y xz
 RUN source ~/.bashrc && bundle install
+
+RUN echo 'export TNS_ADMIN=/usr/lib/oracle/21/client64/lib/network/admin' >> ~/.bashrc
+RUN rm -rf /var/cache/dnf
 
 COPY puma.rb config/puma.rb
 
