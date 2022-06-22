@@ -39,6 +39,7 @@ WORKDIR /root/app
 COPY app/ .
 # RUN gem install bundler
 RUN dnf install -y sqlite-devel
+RUN echo 'export LANG=en_US.UTF-8' >> ~/.bashrc
 RUN source ~/.bashrc && bundle install
 
 COPY puma.rb config/puma.rb
