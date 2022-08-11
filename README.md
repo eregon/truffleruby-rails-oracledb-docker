@@ -7,7 +7,7 @@
 
 For example:
 `git clone  https://github.com/bjfish/rails-blog-sqlite.git app`
-Update `.ruby-version` file to `3.0.3`
+Update `.ruby-version` file to `truffleruby+graalvm-dev`
 
 # Build
 `docker build -t rbenv:test .`

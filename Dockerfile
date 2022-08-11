@@ -14,8 +14,8 @@ RUN git clone https://github.com/rbenv/ruby-build.git /root/.rbenv/plugins/ruby-
 # Build CRuby Dependencies
 RUN dnf install -y tar gcc make openssl-devel zlib-devel
 RUN source ~/.bashrc
-RUN /root/.rbenv/bin/rbenv install 3.0.3
-RUN /root/.rbenv/bin/rbenv global 3.0.3
+RUN /root/.rbenv/bin/rbenv install truffleruby+graalvm-dev
+RUN /root/.rbenv/bin/rbenv global truffleruby+graalvm-dev
 
 # Install nginx
 RUN \
